@@ -534,8 +534,21 @@ ggplot(
 ##Bivariate visulaizations for both a
 ## qualitiative and quantiative variable
 
-#Create a bivariate bar graph
+#Create a bivariate bar graph 
+# making the average function to plot
 average<- tapply(movies$Box.Office,
                  movies$Rating, mean)
 
 print(average)
+
+
+barplot(average)
+
+
+barplot(height = average,
+        main = 'Average Boox Office Revence by Rating',
+        xlab = 'Rating',
+        ylab = 'Box office ($M)')
+
+#Create a biavariate boxplot
+boxplot(table(movies$Rating,movies$Box.Office))
